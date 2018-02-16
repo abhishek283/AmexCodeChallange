@@ -16,7 +16,7 @@ def show_data(datajson,url):
         html += '<td>' + json.dumps(datajson[key]) + '</td>'
     html += '</tr>'
     html += '</table>'
-
+    return html
 
 # ===============To get the Vulnerable computers==============
 def find_vulnerable(datajson,vulnerable):
@@ -63,7 +63,7 @@ if __name__ == "__main__":
         html+= show_data(data1json,url)
         vulnerable= find_vulnerable(data1json,vulnerable)
     html  += show_vulnerable(vulnerable)
-    html = '</html>'
+    html += '</html>'
 
     # ========================================
     with open('report.html', 'w') as file_:
